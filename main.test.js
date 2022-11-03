@@ -8,18 +8,19 @@ import { getHumans } from './main.js'
 // {personfile: [{name:"V1ct@r"}, {city:"Zurich"}, {blood-type:"OZ-positive"}],
 // ]
 
-test('humasOnly function take in an array and return property without symbols or Z', () => {
+test('getHumans function takes in an array and return a personfile', () => {
     const entryList = [
         {personfile: {name: "Dani$l", city: "Zombieville", bloodType:"OZ-negative"}},
-        {personfile: [{name:"Andrea"}, {city:"Austin"}, {bloodType:"O-positive"}]},
-        {personfile: [{name:"Pablo"}, {city:"Mexico City"}, {bloodType:"AB-positive"}]},
-        {personfile: [{name:"V1ct@r"}, {city:"Zurich"}, {bloodType:"OZ-positive"}]},
+        {personfile: {name:"Andrea", city:"Austin", bloodType:"O-positive"}},
+        {personfile: {name:"Pablo", city:"Mexico City", bloodType:"AB-positive"}},
+        {personfile: {name:"V1ct@r", city:"Zurich", bloodType:"OZ-positive"}},
         ]
     const actual = getHumans(entryList);
     const expected = [
-        {personfile: [{name:"Andrea"}, {city:"Austin"}, {bloodType:"O-positive"}]},
-        {personfile: [{name:"Pablo"}, {city:"Mexico City"}, {bloodType:"AB-positive"}]},
+        {personfile: {name:"Andrea", city:"Austin", bloodType:"O-positive"}},
+        {personfile: {name:"Pablo", city:"Mexico City", bloodType:"AB-positive"}},
     ]
     expect(actual).toStrictEqual(expected);
-
+   
 })
+

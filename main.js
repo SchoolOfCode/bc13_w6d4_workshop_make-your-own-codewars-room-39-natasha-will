@@ -33,6 +33,26 @@ export function getHumans(entryList){
     // city - !== Zombieville
     // blood type should not have a Z in string
     // add personfile which has these requirements to array
-    // return array
-
-}
+//     // return array
+    let humans = [];
+    for (let i = 0; i < entryList.length; i++){
+        let name = entryList[i].personfile.name 
+        let pattern = /[^a-zA-Z]+/g;
+        let result = pattern.test(name);
+        let city = entryList[i].personfile.city;
+        let bloodType = entryList[i].personfile.bloodType;
+        let zPattern = /[zZ]+/g;
+        let bloodResult = zPattern.test(bloodType);
+            if ( result == false){
+            
+            }
+            if ( city !== 'Zombieville') {
+               
+            }
+            if ( bloodResult == false) {
+                humans.push(entryList[i]) 
+            }
+            
+        }
+        return humans
+ }
