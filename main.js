@@ -27,6 +27,12 @@ You are the border guard checking that the people entering are not infected with
 */
 //👉 Write the function your CodeWarriors will start with below here:
 
-function getHuman(entryList){
+export function getHumans(entryList){
+    // loop through array within object
+    //name - just letters in the string
+    // city - !== Zombieville
+    // blood type should not have a Z in string
+    // add personfile which has these requirements to array
+    // return array
 
 }
